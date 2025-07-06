@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/find-lucky-integer-in-an-array/
 
+
+C++ code:
 /*
 class Solution {
 public:
@@ -21,4 +23,5 @@ public:
         return lucky;
     }
 };
+
 */
