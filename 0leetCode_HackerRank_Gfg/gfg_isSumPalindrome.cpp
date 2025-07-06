@@ -1,4 +1,4 @@
-// 
+// https://www.geeksforgeeks.org/batch/fork-cpp/track/module-1-basics-and-control-structures/problem/sum-palindrome3857
 
 /*
 class Solution {
