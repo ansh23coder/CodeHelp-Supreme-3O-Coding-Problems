@@ -6,18 +6,16 @@
 using namespace std;
 
 class Solution {
-public:
+  public:
     int distance(int x1, int y1, int x2, int y2) {
-        double dist = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
-        return ceil(dist);  // Round up to nearest integer
+        // Code here.
+        double dx = x2 - x1;
+        double dy = y2 - y1;
+        double dist = sqrt(dx * dx + dy * dy);
+        
+        return static_cast<int>(round(dist));
     }
 };
 
-int main() {
-    Solution obj;
-    cout << obj.distance(0, 0, 2, -2) << endl;     // Output: 3
-    cout << obj.distance(-20, 23, -15, 68) << endl; // Output: 45
-    return 0;
-}
 
 */
