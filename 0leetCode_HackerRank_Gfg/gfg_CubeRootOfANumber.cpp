@@ -21,6 +21,7 @@ class Solution {
                 right = mid - 1;
             }
         }
+            
         return right;
     }
 };
