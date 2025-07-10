@@ -21,6 +21,7 @@ public:
         return prevRows;
     }
 };
+
 int main(){
     int n;
     cout << "Enter number of rows for Pascal's Triangle: ";
@@ -37,6 +38,7 @@ int main(){
     }
     return 0;
 }
+
 /*
 Enter number of rows for Pascal's Triangle: 9
 1 
