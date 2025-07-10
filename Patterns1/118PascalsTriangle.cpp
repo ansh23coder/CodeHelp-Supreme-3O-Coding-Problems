@@ -1,4 +1,5 @@
-// 
+// https://leetcode.com/problems/pascals-triangle/
+
 
 #include <iostream>
 #include <vector>
