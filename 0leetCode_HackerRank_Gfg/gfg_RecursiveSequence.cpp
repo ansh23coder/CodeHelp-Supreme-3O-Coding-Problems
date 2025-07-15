@@ -6,7 +6,6 @@ A function F is defined as follows F(n)= (1) +(2*3) + (4*5*6) ... upto n terms (
 Note: As the answer can be very large, return the answer modulo 109+7.
 
 Example 1:
-
 Input: n = 5
 Output: 365527
 Explanation: 
