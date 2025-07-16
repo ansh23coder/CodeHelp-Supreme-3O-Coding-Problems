@@ -1,7 +1,6 @@
 // https://www.geeksforgeeks.org/problems/factorial5739/1
   
 /*
-
 class Solution {
   public:
     int factorial(int n) {
@@ -14,6 +13,4 @@ class Solution {
         return result;
     }
 };
-
-
 */
