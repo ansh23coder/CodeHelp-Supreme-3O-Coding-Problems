@@ -1,21 +1,36 @@
 #include <iostream>
 using namespace std;
 
-int CountTillN(int n){
-    int count = 0;
-    if(n==0 || n==1) cout << "false number";
+// Helper function to check if a number is prime
+bool isPrime(int num) {
+    if (num <= 1) return false;
 
-    for(int i=1; i<=n; i++){
-        if(n % i == 0){
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int CountPrimesTillN(int n) {
+    int count = 0;
+
+    for (int i = 2; i <= n; i++) {
+        if (isPrime(i)) {
             count++;
         }
     }
+
     return count;
 }
-int main(){
+
+int main() {
     int n;
-    cout<<"enter n: ";
-    cin>>n;
-    int ans = CountTillN(n);
-    cout << "Number of Primes till" << " " << n << " "<< "is" << " " << ans;
+    cout << "Enter n: ";
+    cin >> n;
+
+    int ans = CountPrimesTillN(n);
+    cout << "Number of primes till " << n << " is " << ans << endl;
 }
+// Enter n: 11
+// Number of primes till 11 is 5
