@@ -1,9 +1,11 @@
-// https://www.geeksforgeeks.org/batch/fork-cpp/track/module-1-basics-and-control-structures/problem/perfect-number3759 
+// https://www.geeksforgeeks.org/batch/fork-cpp/track/module-1-basics-and-control-structures/problem/strong-number3759 
+
+// A number is called a Strong Number (not a Perfect Number) if the sum of the factorials of its digits is equal to the number itself.
 
 /*
 class Solution {
   public:
-    int isPerfect(int N) {
+    int isStrongNumber(int N) {
         // code here
         int sum = 0;
         int temp = N;
