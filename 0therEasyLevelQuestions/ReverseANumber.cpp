@@ -31,8 +31,10 @@ int main(){
     }
 }
 /*
-enter number: 789654123
-321456987
+enter number: -98
+89
+enter number: 98
+89
 */
 
 
