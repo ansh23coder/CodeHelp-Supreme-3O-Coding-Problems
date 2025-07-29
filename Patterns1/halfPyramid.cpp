@@ -1,3 +1,5 @@
+// Half pyramid or Triangle Pattern -
+
 #include<iostream>
 using namespace std;
 
