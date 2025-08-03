@@ -1,5 +1,9 @@
 // https://leetcode.com/problems/convert-the-temperature/
 
+// **Formula for converting**:
+// °F = °C * 9/5 + 32 
+
+
 /*
 class Solution {
 public:
