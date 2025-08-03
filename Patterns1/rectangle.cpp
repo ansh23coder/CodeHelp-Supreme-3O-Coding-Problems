@@ -1,3 +1,5 @@
+// Rectangle pattern: l=n, b=n+2
+
 #include<iostream>
 using namespace std;
 
