@@ -1,3 +1,5 @@
+// Square Pattern: length and breadth are same
+
 #include<iostream>
 using namespace std;
 
