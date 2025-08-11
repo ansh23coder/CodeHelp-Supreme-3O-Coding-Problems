@@ -1,5 +1,4 @@
 // C++  program to illustrate creation and traversal of doubly Linked List
-
 #include <iostream>
 using namespace std;
 struct Node {
@@ -48,3 +47,8 @@ int main() {
 
     return 0;
 }
+// output:
+// Forward Traversal:
+// 1 2 3 
+// Backward Traversal:
+// 3 2 1 
