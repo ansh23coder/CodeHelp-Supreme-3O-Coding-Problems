@@ -11,7 +11,6 @@ public:
         next = nullptr;
     }
 };
-
 void traverseAndPrint(Node* head) {
     Node* currentNode = head;
     while (currentNode) {
@@ -20,7 +19,6 @@ void traverseAndPrint(Node* head) {
     }
     cout << "null" << endl;
 }
-
 Node* insertNodeAtPosition(Node* head, Node* newNode, int position) {
     if (position == 1) {
         newNode->next = head;

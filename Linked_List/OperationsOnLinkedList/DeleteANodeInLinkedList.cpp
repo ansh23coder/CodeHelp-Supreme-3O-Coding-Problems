@@ -22,7 +22,6 @@ void traverseAndPrint(Node* head) {
     }
     cout << "null" << endl;
 }
-
 // Function to delete a specific node from the list
 Node* deleteSpecificNode(Node* head, Node* nodeToDelete) {
     // If the node to delete is the head
@@ -37,12 +36,11 @@ Node* deleteSpecificNode(Node* head, Node* nodeToDelete) {
     while (currentNode->next && currentNode->next != nodeToDelete) {
         currentNode = currentNode->next;
     }
-
+    
     // If node wasn't found, return original head
     if (currentNode->next == nullptr) {
         return head;
     }
-
     // Skip over the node to delete
     Node* temp = currentNode->next;
     currentNode->next = currentNode->next->next;

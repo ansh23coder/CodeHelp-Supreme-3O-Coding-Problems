@@ -10,8 +10,8 @@ def traverseAndPrint(head):
         currentNode = currentNode.next
     print("null")
 
+# function to find and remove node in linked list:
 def deleteSpecificNode(head, nodeToDelete):
-
     if head == nodeToDelete:
         return head.next
 
@@ -23,7 +23,6 @@ def deleteSpecificNode(head, nodeToDelete):
         return head
 
     currentNode.next = currentNode.next.next
-
     return head
 
 node1 = Node(7)
