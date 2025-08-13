@@ -1,5 +1,6 @@
 // https://www.geeksforgeeks.org/problems/binary-search-1587115620/11
 
+
 #include<iostream>
 #include<vector>
 using namespace std;
