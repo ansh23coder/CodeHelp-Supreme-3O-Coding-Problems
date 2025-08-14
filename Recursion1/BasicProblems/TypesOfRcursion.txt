@@ -1,0 +1,160 @@
+**Types of Recursion in C++**
+-> Recursion is a process where a function calls itself, either directly or indirectly to repeat the same task for smaller data. In C++, recursion occurs by writing a function that includes a call to itself within its body.
+
+Based on how and where this function calls are present, recursion in C++ can be classified into the following types:
+
+
+**Recursion**
+1. Direct recursion
+  -> Head recursion
+  -> Tail recursion
+  -> Tree recursion
+2. Indirect recursion
+
+
+1. Direct Recursion
+Direct recursion occurs when a function calls itself directly from within its body. This is the most common and straightforward form of recursion.
+
+Example:
+#include <iostream>
+using namespace std;
+​
+void show(int n) {
+    if (n == 0)
+        return;
+    cout << n << " ";
+​
+    // Direct recursive call
+    show(n - 1);
+}
+​
+int main() {
+    show(5);
+    return 0;
+}
+Output
+5 4 3 2 1 
+In this example, the show() function calls itself directly with a reduced value of n.
+
+
+Direct recursion can be divided into:
+
+A. Head Recursion
+In head recursion, the recursive call happens before any processing in the function. The function calls itself first and processes later.
+
+#include <iostream>
+using namespace std;
+​
+void head(int n) {
+    if (n != 0) {
+        // Recursive call before processing
+        head(n - 1);
+    }
+    cout << n << " ";
+}
+int main() {
+    head(5);
+    return 0;
+}
+Output
+0 1 2 3 4 5 
+Here, the function goes deep into recursion first and processes while returning.
+
+
+B. Tail Recursion
+In tail recursion, the function processes first and the recursive call is the last operation.
+
+#include <iostream>
+using namespace std;
+​
+void tail(int n) {
+    if (n == 0)
+        return;
+    cout << n << " ";
+​
+    // Recursive call after processing
+    tail(n - 1);
+}
+int main() {
+    tail(5);
+    return 0;
+}
+Output
+5 4 3 2 1 
+Tail recursion can be more memory-efficient and may benefit from compiler optimizations.
+
+
+C. Tree Recursion
+Tree recursion happens when a function calls itself more than once within its body, forming a tree-like structure.
+
+#include <iostream>
+using namespace std;
+​
+void tree(int n) {
+    if (n == 0)
+        return;
+    cout << n << " ";
+​
+    // Two recursive calls
+    tree(n - 1);
+    tree(n - 1);
+}
+int main() {
+    tree(3);
+    return 0;
+}
+Output
+3 2 1 1 2 1 1 
+The function calls itself twice for each value, branching like a tree.
+
+
+D. Nested Recursion
+Nested recursion means the argument to a function is itself a recursive call.
+
+#include <iostream>
+using namespace std;
+​
+int nested(int n) {
+    if (n > 100)
+        return n - 10;
+​
+    // Recursive call inside another recursive call
+    return nested(nested(n + 11));
+}
+int main() {
+    cout << nested(95);
+    return 0;
+}
+Output
+91
+This type of recursion is complex and used only when necessary.
+
+
+2. Indirect Recursion
+In indirect recursion, a function does not call itself directly. Instead, it calls another function that eventually calls the first one, creating a chain of calls.
+
+#include <iostream>
+using namespace std;
+​
+void funcA(int);
+void funcB(int);
+​
+void funcA(int n) {
+    if (n > 0) {
+        cout << n << " ";
+        funcB(n - 1);
+    }
+}
+void funcB(int n) {
+    if (n > 0) {
+        cout << n << " ";
+        funcA(n / 2);
+    }
+}
+int main() {
+    funcA(10);
+    return 0;
+}
+Output
+10 9 4 3 1 
+Here, funcA() calls funcB(), which calls funcA() again, forming indirect recursion.
