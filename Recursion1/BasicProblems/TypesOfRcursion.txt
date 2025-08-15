@@ -9,6 +9,7 @@ Based on how and where this function calls are present, recursion in C++ can be 
   -> Head recursion
   -> Tail recursion
   -> Tree recursion
+  
 2. Indirect recursion
 
 
