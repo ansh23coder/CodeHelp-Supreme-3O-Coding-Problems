@@ -8,3 +8,4 @@ class Solution:
                 s[i] = '9'
                 break
         return int(''.join(s))
+    
