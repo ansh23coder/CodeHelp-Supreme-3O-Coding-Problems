@@ -1,0 +1,46 @@
+🔍 Problem Summary
+
+You're given a matrix mat[][] of size n x m, where each row is sorted in non-decreasing order, and both n and m are odd.
+
+You need to return the median of all elements in the matrix.
+
+The median is the middle element when all elements are sorted (i.e., the ⌊(n×m)/2⌋ + 1-th smallest element).
+
+💡 Efficient Approach (Binary Search)
+✅ Key Observations:
+
+Total elements = n * m (odd)
+
+Median will be the (n * m) // 2-th element in the sorted order (0-indexed)
+
+We don't need to sort the entire matrix, which would take O(n * m * log(n * m)) time.
+
+🎯 Instead, we use Binary Search:
+
+We binary search for the median in the value range (1 to 2000), not index.
+
+🧠 Algorithm Steps:
+
+Set low = 1 and high = 2000 (based on constraint 1 ≤ mat[i][j] ≤ 2000)
+
+While low < high:
+
+Set mid = (low + high) // 2
+
+Count how many elements in the matrix are <= mid
+
+For each row (which is sorted), use binary search (e.g., bisect_right) to count how many numbers ≤ mid
+
+If count < desired count ((n * m) // 2 + 1), move low = mid + 1
+
+Else, move high = mid
+
+When loop ends, low is the median
+
+🧪 Time Complexity:
+
+Binary search on value range: O(log(max - min)) = O(log2000)
+
+Each binary search iteration counts ≤ mid using binary search in each row: O(n * log m)
+
+So, total time: O(log(max) * n * log m), which is efficient for constraints (n, m ≤ 400)
