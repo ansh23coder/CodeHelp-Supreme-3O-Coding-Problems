@@ -1,0 +1,111 @@
+// https://www.geeksforgeeks.org/batch/skill-up-cpp/track/su-cpp-day11/article/MTQwMTQ0
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int var = 10;
+
+    // declare pointer and store address of x
+    int* ptr = &var;
+
+    // print value and address
+    cout << "Value of x: " << var << endl;
+    cout << "Address of x: " << &var << endl;
+    cout << "Value stored in pointer ptr: " << ptr << endl;
+    cout << "Value pointed to by ptr: " << *ptr << endl;
+
+    return 0;
+}
+------->
+int* ptr; declares a pointer to an integer.
+ptr = &x; stores the address of variable x in the pointer ptr.
+*ptr is called the dereference operator. It gives us access to the value stored at the memory address ptr is pointing to.
+
+------->
+Special Types of Pointers
+There are 4 special types of pointers that used or referred to in different contexts:
+
+Wild Pointer
+When a pointer is created, it just contains a random address that may or may not be valid. This type of pointer is called wild pointer.
+
+
+
+
+#include <iostream>
+using namespace std;
+​
+int main() {
+​
+    // Wild pointer
+    int *ptr;
+    return 0;
+}
+Dereferencing this pointer may lead to errors such as segmentation faults. So, it is always recommended to initialize a pointer.
+
+NULL Pointer
+A NULL pointer is a pointer that does not point to any valid memory location but NULL. It is often used to initialize a pointer when you do not want it to point to any object.
+
+
+
+
+#include <iostream>
+using namespace std;
+​
+int main() {
+    
+    // NULL pointer
+    int *ptr = NULL;
+    
+    return 0;
+}
+Void Pointers
+A void pointer (void*) is a special type of pointer in C++ that has no associated data type. It can hold the address of any data type, making it useful for generic programming. However, since the type is unknown, the compiler doesn't know how many bytes to read or how to interpret the data. Therefore, a void pointer cannot be directly dereferenced. It must first be explicitly typecast to the appropriate pointer type.
+
+#include <iostream>
+using namespace std;
+​
+int main() {
+    int x = 42;
+    
+    // void pointer holding address of an int
+    void* ptr = &x; 
+​
+    // Error: cannot dereference void pointer
+    // cout << *ptr; 
+​
+    // Typecast before dereferencing
+    cout << "Value pointed by void pointer: " << *(static_cast<int*>(ptr)) << endl;
+​
+    return 0;
+}
+
+Output
+Value pointed by void pointer: 42
+Dangling Pointer
+A dangling pointer is a pointer that refers to memory which has already been freed or is no longer valid. This typically happens when:
+
+A pointer points to a local variable that has gone out of scope
+Dynamically allocated memory is deallocated using delete, but the pointer still holds the old address
+Dereferencing a dangling pointer leads to undefined behavior, and is a common source of hard-to-find bugs.
+
+
+#include <iostream>
+using namespace std;
+​
+int* getPointer() {
+    int x = 10;
+    
+    // returning address of local variable
+    return &x; 
+}
+​
+int main() {
+    
+    // ptr becomes dangling here
+    int* ptr = getPointer(); 
+    
+    // Undefined behavior
+    // cout << *ptr; 
+    return 0;
+}
