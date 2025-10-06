@@ -37,13 +37,9 @@ Example Walkthrough
 Input: [2, 3, 1, 2, 3]
 
 i=0 → val=2 → mark index 1 → arr = [2, -3, 1, 2, 3]
-
 i=1 → val=3 → mark index 2 → arr = [2, -3, -1, 2, 3]
-
 i=2 → val=1 → mark index 0 → arr = [-2, -3, -1, 2, 3]
-
 i=3 → val=2 → index=1 already negative → duplicate = 2
-
 i=4 → val=3 → index=2 already negative → duplicate = 3
 
 Output: [2, 3]
