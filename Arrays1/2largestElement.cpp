@@ -11,7 +11,7 @@ class Solution {
         // return arr.back();
         
         // method 2: 
-         return *max_element(arr.begin(), arr.end());
+        return *max_element(arr.begin(), arr.end());
 
     }
 };
