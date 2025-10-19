@@ -13,9 +13,8 @@ public:
     }
 };
 void printList(Node* curr) {
-  
     // Iterate till n reaches NULL
-    while ( curr != nullptr) {
+    while (curr != nullptr) {
       
         cout << curr->data << " ";
         curr = curr->next;
@@ -42,10 +41,8 @@ int main() {
 
 
 /* another way to declare and print singly linked list - Using a while Loop in Main (Without a Separate Print Function) */
-
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node {
 public:
     int data;
